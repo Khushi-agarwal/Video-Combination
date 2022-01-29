@@ -1,20 +1,29 @@
-var vid1 = document.getElementById("MyVid1");
-var vid2 = document.getElementById("MyVid2");
-vid2.style.display = "none"
+var vid2 = document.getElementById("MyVid1");
+var vid=document.getElementById("MyVid2");
+vid2.style.display="none";
+let c=-1;
+vid.addEventListener("timeupdate", function(){
+// Check you time here and
 
-vid1.onloadeddata = function() {
-    vid1.currentTime = 0;
-    vid1.play()
-};
+if(vid.currentTime >=15 && c<=0)  // CurrentTime
+{
+vid.style.display = "none";
+vid2.style.display="block";
+c++;
+vid.pause();// Stop the Video
+vid2.play();
 
-vid2.onloadeddata = function() {
-    vid2.currentTime = 10; //Just to illusrate as begining is black screen
-    vid2.pause()
-};
-
-vid1.onended = function() {
-    vid2.play()
-    vid1.style.display = "none"
-    vid2.style.display = "block"
-};
+}
+});
+vid2.addEventListener("timeupdate",function(){
+if(vid2.currentTime>=5)
+{
+  
+    vid.style.display="block";
+    vid2.style.display="none";
+    vid2.pause();
+    vid2.currentTime=1;
+    vid.play();
     
+}
+});
