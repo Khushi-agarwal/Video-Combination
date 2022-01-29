@@ -1,4 +1,3 @@
-Heroku Deployed link - https://video-jsapp.herokuapp.com/
-
+Heroku Deployed link - https://videojsapp.herokuapp.com/
 Clink on the link to view the deployed site.
 
